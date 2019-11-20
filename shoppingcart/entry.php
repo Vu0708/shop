@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,11 +19,11 @@
 			<h2>商品検索 - カテゴリ選択</h2>
 			<p>商品カテゴリを選択して［検索］ボタンをクリックしてください。</p>
 			<p>カテゴリを選択しなかった場合は、全件検索が実施されすべての商品が表示されます。</p>
-			<form action="result.html" method="get">
+			<form action="result.php" method="get">
 				<table class="borderless">
 					<tr>
 						<td>
-							<input type="radio" name="category" value="book" id="book" checked />
+							<input type="radio" name="category" value="book" id="book" />
 							<label for="book">書籍</label>
 						</td>
 						<td>
@@ -37,6 +36,12 @@
 					</tr>
 				</table>
 			</form>
+			<?php
+			$category = null;
+			if(isset($_GET["category"])){
+			    $category = $_GET["category"];
+			}
+			?>
 		</article>
 	</main>
 

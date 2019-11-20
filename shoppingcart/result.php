@@ -1,3 +1,10 @@
+<?php
+require_once "BookFunx.php";
+$BookItem = ;
+require_once("DvdFunx.php");
+$DvdItem = createDvdItems();
+require_once("entry.php");
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -29,34 +36,16 @@
 						<th>ISBN</th>
 						<th></th>
 					</tr>
-					<tr>
-						<td>Head First PHP & MySQL</td>
-						<td>4,650</td>
-						<td>Lynn Beighley</td>
-						<td>978-4873114446</td>
-						<td>カートに入れる</td>
-					</tr>
-					<tr>
-						<td>リーダブルコード</td>
-						<td>2,600</td>
-						<td>Dustin Boswell</td>
-						<td>978-4873115658</td>
-						<td>カートに入れる</td>
-					</tr>
-					<tr>
-						<td>Head First デザインパターン</td>
-						<td>5,060</td>
-						<td>Eric Freeman</td>
-						<td>978-4873112497</td>
-						<td>カートに入れる</td>
-					</tr>
-					<tr>
-						<td>PHPによるデザインパターン入門</td>
-						<td>2,400</td>
-						<td>下岡 秀幸</td>
-						<td>978-4798015163</td>
-						<td>カートに入れる</td>
-					</tr>
+			<?php
+			        for ($i=0 ; $i < count($BookItem) ; $i++) { ?>
+					<tr> 
+					<td><?= $BookItem[$i]->getBookName() ?></td> 
+					<td><?= $BookItem[$i]->getBookAuthor() ?></td>
+					<td><?= $BookItem[$i]->getBookPrice() ?></td>
+					<td><?= $BookItem[$i]->getBookCode() ?></td>
+					<td><a href="cart.php?id=<?= $i ?>">カートに入れる</a></td>
+					</tr> 
+					<?php  } ?>
 				</table>
 			</section>
 		</article>

@@ -13,7 +13,7 @@ class BookItem
      * @param $BookAuthor
      * @param $BookCode
      */
-    public function __construct($BookName, $BookAuthor,$BookPrice, $BookCode)
+    public function __construct(string $BookName,string $BookAuthor,int $BookPrice,string $BookCode)
     {
         $this->BookName = $BookName;
         $this->BookPrice = $BookPrice;
@@ -24,7 +24,7 @@ class BookItem
     /**
      * @return mixed
      */
-    public function getBookName()
+    public function getBookName():string
     {
         return $this->BookName;
     }
@@ -32,7 +32,7 @@ class BookItem
     /**
      * @param mixed $BookName
      */
-    public function setBookName($BookName): void
+    public function setBookName(string $BookName): void
     {
         $this->BookName = $BookName;
     }
@@ -40,15 +40,15 @@ class BookItem
     /**
      * @return mixed
      */
-    public function getBookPrice()
+    public function getBookPrice():int
     {
-        return $this->BookPrice;
+        return number_format($this->BookPrice);
     }
 
     /**
      * @param mixed $BookPrice
      */
-    public function setBookPrice($BookPrice): void
+    public function setBookPrice(int $BookPrice): void
     {
         $this->BookPrice = $BookPrice;
     }
@@ -56,7 +56,7 @@ class BookItem
     /**
      * @return mixed
      */
-    public function getBookAuthor()
+    public function getBookAuthor():string
     {
         return $this->BookAuthor;
     }
@@ -64,7 +64,7 @@ class BookItem
     /**
      * @param mixed $BookAuthor
      */
-    public function setBookAuthor($BookAuthor): void
+    public function setBookAuthor(string $BookAuthor): void
     {
         $this->BookAuthor = $BookAuthor;
     }
@@ -72,7 +72,7 @@ class BookItem
     /**
      * @return mixed
      */
-    public function getBookCode()
+    public function getBookCode():string
     {
         return $this->BookCode;
     }
@@ -80,7 +80,7 @@ class BookItem
     /**
      * @param mixed $BookCode
      */
-    public function setBookCode($BookCode): void
+    public function setBookCode(string $BookCode): void
     {
         $this->BookCode = $BookCode;
     }

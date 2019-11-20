@@ -8,6 +8,6 @@ function createDvdItems():array {
         new DvdItem("Star Wars: Force Awakens",2800,150),
         new DvdItem("Outbreak",900,129)
     );
-    return createBookItems();
+    return $BookItems;
 }
 ?>
