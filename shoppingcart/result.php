@@ -1,9 +1,12 @@
 <?php
 require_once "BookFunx.php";
-$BookItem = ;
 require_once("DvdFunx.php");
+?>
+<?php
+$BookItem = [];
+$BookItem = createBookItems();
+$DvdItem = [];
 $DvdItem = createDvdItems();
-require_once("entry.php");
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -29,23 +32,81 @@ require_once("entry.php");
 				<h3>商品一覧</h3>
 				<table>
 					<caption><a href="entry.php">検索画面に戻る</a>　カートの中身を見る</caption>
-					<tr>
+			<?php
+			if (isset($_GET["category"])){
+			    $result = $_GET["category"];
+			    if($result == "book"){ ?>
+			        <tr>
 						<th>書籍名</th>
 						<th>価格</th>
 						<th>著者</th>
 						<th>ISBN</th>
 						<th></th>
 					</tr>
-			<?php
-			        for ($i=0 ; $i < count($BookItem) ; $i++) { ?>
+					<?php for ($i=0 ; $i < count($BookItem) ; $i++) { ?>
 					<tr> 
-					<td><?= $BookItem[$i]->getBookName() ?></td> 
-					<td><?= $BookItem[$i]->getBookAuthor() ?></td>
-					<td><?= $BookItem[$i]->getBookPrice() ?></td>
-					<td><?= $BookItem[$i]->getBookCode() ?></td>
-					<td><a href="cart.php?id=<?= $i ?>">カートに入れる</a></td>
-					</tr> 
-					<?php  } ?>
+					<td> <?= $BookItem[$i]->getBookName() ?> </td> 
+					<td> <?= $BookItem[$i]->getBookAuthor() ?> </td>
+					<td> <?= $BookItem[$i]->getBookPrice() ?>円 </td>
+					<td> <?= $BookItem[$i]->getBookCode() ?> </td>
+					<td><a href="cart.php?id= <?= $i ?> ">カートに入れる</a></td>
+					</tr>
+					<?php } ?>
+					<?php }elseif ($result == "dvd"){ ?>
+					<tr>
+						<th>タイトル</th>
+						<th>価格</th>
+						<th>収録時間</th>
+						<th></th>
+					</tr>
+					   <?php for($i = 0 ; $i < count($DvdItem) ; $i++ ) { ?>
+					<tr> 
+					<td> <?= $DvdItem[$i]->getDvdName() ?> </td> 
+					<td> <?= $DvdItem[$i]->getDvdPrice() ?>円 </td>
+					<td> <?= $DvdItem[$i]->getDvdTime() ?>分 </td>
+					<td><a href="cart.php?id= <?= $i ?> ">カートに入れる</a></td>
+					</tr>
+					<?php } ?>
+					<?php }
+					}else { ?>
+					<tr>
+					    <th><h3>書籍</h3></th>
+						<th>書籍名</th>
+						<th>価格</th>
+						<th>著者</th>
+						<th>ISBN</th>
+						<th></th>
+					</tr>
+					<?php for ($i=0 ; $i < count($BookItem) ; $i++) { ?>
+					<tr> 
+					<td></td>
+					<td> <?= $BookItem[$i]->getBookName() ?> </td> 
+					<td> <?= $BookItem[$i]->getBookAuthor() ?> </td>
+					<td> <?= $BookItem[$i]->getBookPrice() ?>円 </td>
+					<td> <?= $BookItem[$i]->getBookCode() ?> </td>
+					<td><a href="cart.php?id= <?= $i ?> ">カートに入れる</a></td>
+					</tr>
+					<?php } ?>
+					<br><br>
+					<tr>
+					    <th><h3>DVD</h3></th>
+						<th>タイトル</th>
+						<th>価格</th>
+						<th>収録時間</th>
+						<th></th>
+					</tr>
+					<?php for($j = 0 ; $j < count($DvdItem) ; $j++ ) { ?>
+					<tr> 
+					<td></td>
+					<td> <?= $DvdItem[$j]->getDvdName() ?> </td> 
+					<td> <?= $DvdItem[$j]->getDvdPrice() ?>円 </td>
+					<td> <?= $DvdItem[$j]->getDvdTime() ?>分 </td>
+					<td><a href="cart.php?id= <?= $j ?> ">カートに入れる</a></td>
+					</tr>
+					<?php } ?>
+					<?php
+					}
+					?>
 				</table>
 			</section>
 		</article>

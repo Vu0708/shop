@@ -13,7 +13,7 @@ class DvdItem
      * @param $DvdPrice
      * @param $DvdTime
      */
-    public function __construct($DvdName, $DvdPrice, $DvdTime)
+    public function __construct(string $DvdName,int $DvdPrice,int $DvdTime)
     {
         $this->DvdName = $DvdName;
         $this->DvdPrice = $DvdPrice;
@@ -23,7 +23,7 @@ class DvdItem
     /**
      * @return mixed
      */
-    public function getDvdName()
+    public function getDvdName():string
     {
         return $this->DvdName;
     }
@@ -31,7 +31,7 @@ class DvdItem
     /**
      * @param mixed $DvdName
      */
-    public function setDvdName($DvdName): void
+    public function setDvdName(string $DvdName): void
     {
         $this->DvdName = $DvdName;
     }
@@ -39,7 +39,7 @@ class DvdItem
     /**
      * @return mixed
      */
-    public function getDvdPrice()
+    public function getDvdPrice():int
     {
         return $this->DvdPrice;
     }
@@ -47,7 +47,7 @@ class DvdItem
     /**
      * @param mixed $DvdPrice
      */
-    public function setDvdPrice($DvdPrice): void
+    public function setDvdPrice(int $DvdPrice): void
     {
         $this->DvdPrice = $DvdPrice;
     }
@@ -55,7 +55,7 @@ class DvdItem
     /**
      * @return mixed
      */
-    public function getDvdTime()
+    public function getDvdTime():int
     {
         return $this->DvdTime;
     }
@@ -63,7 +63,7 @@ class DvdItem
     /**
      * @param mixed $DvdTime
      */
-    public function setDvdTime($DvdTime): void
+    public function setDvdTime(int $DvdTime): void
     {
         $this->DvdTime = $DvdTime;
     }

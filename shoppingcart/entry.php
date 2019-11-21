@@ -36,12 +36,6 @@
 					</tr>
 				</table>
 			</form>
-			<?php
-			$category = null;
-			if(isset($_GET["category"])){
-			    $category = $_GET["category"];
-			}
-			?>
 		</article>
 	</main>
 

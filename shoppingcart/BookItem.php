@@ -42,7 +42,7 @@ class BookItem
      */
     public function getBookPrice():int
     {
-        return number_format($this->BookPrice);
+        return $this->BookPrice;
     }
 
     /**
