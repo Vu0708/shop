@@ -64,7 +64,7 @@ $DvdItem = createDvdItems();
 					<td> <?= $DvdItem[$i]->getDvdName() ?> </td> 
 					<td> <?= $DvdItem[$i]->getDvdPrice() ?>円 </td>
 					<td> <?= $DvdItem[$i]->getDvdTime() ?>分 </td>
-					<td><a href="cart.php?dvd_id= <?= $i ?> ">カートに入れる</a></td>
+					<td><a href="cart.php?dvd_id=<?= $i ?>">カートに入れる</a></td>
 					</tr>
 					<?php } ?>
 					<?php }
@@ -84,7 +84,7 @@ $DvdItem = createDvdItems();
 					<td> <?= $BookItem[$i]->getBookAuthor() ?> </td>
 					<td> <?= $BookItem[$i]->getBookPrice() ?>円 </td>
 					<td> <?= $BookItem[$i]->getBookCode() ?> </td>
-					<td><a href="cart.php?book_id= <?= $i ?> ">カートに入れる</a></td>
+					<td><a href="cart.php?book_id=<?= $i ?>">カートに入れる</a></td>
 					</tr>
 					<?php } ?>
 					<br><br>
@@ -101,7 +101,7 @@ $DvdItem = createDvdItems();
 					<td> <?= $DvdItem[$j]->getDvdName() ?> </td> 
 					<td> <?= $DvdItem[$j]->getDvdPrice() ?>円 </td>
 					<td> <?= $DvdItem[$j]->getDvdTime() ?>分 </td>
-					<td><a href="cart.php?dvd_id= <?= $j ?> ">カートに入れる</a></td>
+					<td><a href="cart.php?dvd_id=<?= $j ?>">カートに入れる</a></td>
 					</tr>
 					<?php } ?>
 					<?php
